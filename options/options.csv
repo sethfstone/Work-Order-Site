@@ -1,0 +1,7 @@
+OS Install, User Profile Configuration, System Configuration, Applications, Optimizations, Final Items
+Reinstall OS/ format/ wipe all data,Reinstall OS/ preserve user data,Clone from Fog image
+Create domain login,Shared/ Create shared/ local account,Login with users account/ set-reset password,Set up connections to I/J Drive,Run ClearType
+Set hostname to SSRC-{barcode},Add/ connect printers,Manually specify DNS servers,Join the domain,Make user profile local admin,Run Windows updates,Run Dell SupportAssist,Disable wifi,Set Chrome as default browser,Set Acrobat Reader as default PDF reader
+Adobe Acrobat Reader DC,Adobe Creative Cloud,Google Chrome,Mozilla Firefox,SimpleHelp,Cisco AMP,Cisco VPN Client,MakeMeAdmin,Microsoft Office365,Microsoft Office Perpetual,Security Exceptions: Cisco AMP,Security Exceptions: SimpleHelp Remote,SPSS,STATA
+Turn off sounds,Replace background image with solid color,Turn Windows Spotlight off,Remove tiles from start menu,Disable Cortana,Disable News & Interests,Set to optimize for best performance,Power Management: never sleep
+Wifi is off/ not logged in,I/J Drives are not logged in under admin accounts,Office365 is not logged in under your account,Office Perpetual is activated,Windows is activated,Force user to change password on next login
