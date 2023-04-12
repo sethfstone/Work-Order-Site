@@ -129,7 +129,7 @@ echo '
 				}
 			}
 
-			window.location = "https://aries.msussrc.com/apps/workorder";
+			window.location = "https://aries.msussrc.com/apps/workorder/processingPHP/updateProgress.php";
 		}
 
         </script>
@@ -235,7 +235,6 @@ echo '
 
 
 //Loop over array of optional items and filter by incomplete / complete 
-
 while($row = pg_fetch_assoc($detRes)){
 	if($row['completed'] == 1){
 		echo '
@@ -274,10 +273,10 @@ foreach($incompleteList as $val){
 	echo '
                         <div style="width: 90%; position:relative;left:5%;margin-top:9px;margin-bottom:12px;" class="list">
                                 <div style="width:100%; background-color:#c0d7df;display:flex;border-radius:6px; border-style:solid; border-color:white;height:fit-content;vertical-align:middle"><input id="items" class="items" onclick="check()" type="checkbox" style="margin-left:9px;" name="optional[]" value="'.$val['optionvalue'].'"><p style="margin-left:12px;position:relative;top:7px;" id="value">'.$val['optionvalue'].'</p></div>
-                        </div>
+
+			</div>
                 ';
 }
-
 
 
 
@@ -296,11 +295,32 @@ echo '</div></div>';
 
 //hidden input / submit for edit / update query for the particular computer displayed
 echo '
-	<input type="hidden" name="ID" value="'.$selectedID.'" syle="position:relative; top:-400px;">
-	<input type="submit" style="display:none;position:relative; top: -400px;">
+	<input type="hidden" name="ID" value="'.$selectedID.'" syle="position:right; top:400px;">
+	<input type="submit" style="display:none;position:right; top: 400px;">
+</form>
 ';
 
-echo '<button onclick="uncheck()" style="position:absolute;top:524px;left:9.3%;" class="btn btn-light">Undo Progress</button> ';
+
+echo '<form action="../processingPHP/updateProgress.php" method="post">';
+echo '<button style="position:absolute;top:524px;left:9.3%;" name="test" value="'.$selectedID.'" class="btn btn-light">Undo Progress</button> ';
+//echo '<input type="submit" value="test" name="test"></input>';
+echo '</form>';
 
 
+
+//text box to add to the to do list with a submit button
+echo'
+<form action="../processingPHP/addAdditionalOption.php" method="post">
+//<input type="text" name="listitem" value="'.$listItem.'", style="position:relative; top:-300px; left:200px; width:300px"/>
+	<input type = "submit" value="'.$selectedID.'" name="submit" id="submit" style="position:relative; top:-300px; left:200px;  height: 35px; width:65px"/>
+</form>
+';
+
+//update the table to insert the new input values into the to do list 
+//"INSERT INTO options (optionvalue, id, completed)"
+//"VALUES ($listItem,$id,0)";
+
+
+//ADD $listItem optionvalue not null;
+ 
 ?>
